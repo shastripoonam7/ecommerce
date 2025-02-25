@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport"
+	content="width=device-width, 
+                   initial-scale=1,
+                   shrink-to-fit=no" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<title>Registration Form</title>
+</head>
+
+<body>
+	<h1 class="text-success text-center">E-Commerce - Registration</h1>
+	<div class="container mt-5">
+		<div class="row justify-content-center">
+			<div class="col-md-6">
+				<div class="card">
+					<div class="card-body">
+						<form id="loginForm" action="/ecommerce/registerUser" method="post">
+							<div class="form-group">
+								<label for="username"> User Name </label> <input type="text"
+									class="form-control" id="username" name="username" placeholder="username" required />
+							</div>
+							<div class="form-group">
+								<label for="email"> Email </label> <input type="email"
+									class="form-control" id="email" name="email" placeholder="Email" required />
+							</div>
+							<div class="form-group">
+								<label for="password_hash"> Password </label> <input type="password"
+									class="form-control" id="password_hash" name="password_hash" placeholder="Password"
+									required />
+							</div>
+							<div class="form-group">
+								<label for="role"> Role </label> 
+								
+								<select class="form-control" id="role" name="role" required>
+									<option value="ADMIN">Admin</option>
+									<option value="USER">User</option>
+								</select>
+									
+							</div>
+							<button class="btn btn-danger">Register</button>
+						</form>
+						<p class="mt-3">
+							Have an account? <a href="/ecommerce/login">Login</a>
+						</p>
+						<p class="mt-3 text-success" th:text="${success}"></p>
+						<p class="mt-3 text-danger" th:text="${error}"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
