@@ -30,6 +30,16 @@ public class UserController {
 		return "register";
 	}
 	
+	@GetMapping("/home")
+	public String home() {
+		return "home";
+	}
+	
+	@GetMapping("/products")
+	public String products() {
+		return "products";
+	}
+	
 	@PostMapping("/loginUser")
 	public String loginUser(@ModelAttribute("user") User user,Model model) {
 		user = userService.findByUsername(user);
